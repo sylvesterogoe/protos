@@ -21,7 +21,7 @@ go mod init \
 go mod tidy
 cd ../../
 git add . && git commit -am "proto update" || true
-git push https://${{ secrets.PA_TOKEN }}@github.com/sylvesterogoe/protos.git HEAD:main
+git push https://${secrets.PA_TOKEN}@github.com/sylvesterogoe/protos.git HEAD:main
 git tag -fa golang/${SERVICE_NAME}/${RELEASE_VERSION} \
   -m "golang/${SERVICE_NAME}/${RELEASE_VERSION}" 
-git push https://${{ secrets.PA_TOKEN }}@github.com/sylvesterogoe/protos.git refs/tags/golang/${SERVICE_NAME}/${RELEASE_VERSION}
+git push https://${secrets.PA_TOKEN}@github.com/sylvesterogoe/protos.git refs/tags/golang/${SERVICE_NAME}/${RELEASE_VERSION}
